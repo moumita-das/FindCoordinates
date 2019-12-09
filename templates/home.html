@@ -1,0 +1,27 @@
+{% load static %}<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Find GeoCodes</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+</head>
+<body>
+{% block content %}
+  <div class = " text-center container-fluid">
+    <h2>Find it's Coordinates</h2>
+  </div>
+  <div class = "text-center ">
+      <form class = "my-2 md-form" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+          <input class = "my-2 btn btn-outline-primary btn-rounded waves-effect  col-md-6 col-sm-3"  type="file" name="myfile">
+          <button class = "my-2 border border-dark btn btn-primary  col-md-6 col-sm-3" type="submit">Upload</button>
+      </form>
+      {% if uploaded_file_url %}
+        <input class="border border-dark btn btn-primary  col-md-6 col-sm-3 " type="button" value="Download" onclick="location.href='{{ uploaded_file_url }}'"  />
+      {% endif %}
+  </div>
+
+
+{% endblock %}
+</body>
+</html>

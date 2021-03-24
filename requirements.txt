@@ -19,7 +19,7 @@ pyexcel-io==0.5.20
 pyexcel-webio==0.1.4
 pytz==2019.3
 requests==2.22.0
-rsa==4.0
+rsa==4.1
 six==1.13.0
 sqlparse==0.3.0
 texttable==1.6.2
